@@ -1,0 +1,6 @@
+{
+	// .::MOCK SETTINGS::.
+	// Implement this as the main setting and have sublime-commands programmaticly generated/injected?
+	"goto_folder.shortcut_explorer" : {"cmd": "explorer", "args": ["$folder_name"] },
+	"goto_folder.shortcut_cmd" : {"cmd": "cmd", "args": ["$folder_name"] }
+}

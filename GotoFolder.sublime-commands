@@ -1,0 +1,4 @@
+[
+    { "caption": "Goto Folder: Explorer", "command": "goto_folder" },
+    { "caption": "Goto Folder: Cmd", "command": "goto_folder", "args": {"mode":"c"} }
+]
