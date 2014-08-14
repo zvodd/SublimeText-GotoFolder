@@ -1,6 +1,16 @@
 {
-	// .::MOCK SETTINGS::.
-	// Implement this as the main setting and have sublime-commands programmaticly generated/injected?
-	"goto_folder.shortcut_explorer" : {"cmd": "explorer", "args": ["$folder_name"] },
-	"goto_folder.shortcut_cmd" : {"cmd": "cmd", "args": ["$folder_name"] }
+	"launchers" :{
+	/* Special Arguments:  
+			@d = Current view file's directory
+			@f = Current view's filename
+			---@l = Current view's line number-- not implemented
+		Escape :
+			"@" as "@@"  
+			e.g. if you need an argument that you enter below to contain "@", write "@@"
+	*/
+		"explorer" : ["explorer", "@d"],
+		"conemu64" : ["conemu64", "/Dir", "@d", "/Single" ],
+		"conemu" : ["conemu", "/Dir", "@d", "/Single" ],
+		"cmd" : ["cmd", "/d", "@d" ]
+	}
 }
