@@ -1,5 +1,7 @@
+from __future__ import print_function
 import sublime, sublime_plugin
 import subprocess, os, re
+
 
 goto_folder_settings = sublime.load_settings("GotoFolder.sublime-settings")
 
@@ -12,13 +14,13 @@ class GotoFolderCommand(sublime_plugin.TextCommand):
 			self.settings = sublime.load_settings("GotoFolder.sublime-settings")
 			commands = self.settings.get("commands")
 			if not commands:
-				print "'GotoFolder.sublime-settings' missing key 'commands', no commands to run."
+				print ("'GotoFolder.sublime-settings' missing key 'commands', no commands to run.")
 				return
-			if commands.has_key(commandkey):
+			if commandkey in commands:
 				cmd = self.arg_replacer(commands[commandkey])
 				self.launch_process(cmd)
 			else:
-				print "Unregonised command: please set in 'GotoFolder.sublime-settings'"
+				print ("Unregonised command: please set in 'GotoFolder.sublime-settings'")
 
 	def is_enabled(self):
 		return self.view.file_name() and len(self.view.file_name()) > 0
@@ -26,7 +28,7 @@ class GotoFolderCommand(sublime_plugin.TextCommand):
 	def launch_process(self, arglist):
 		''' launch detached process '''
 		DETACHED_PROCESS = 0x00000008 #is this windows spesific?
-		print "opening proccess %s" % arglist[0]
+		print ("opening proccess %s" % arglist[0])
 		subprocess.Popen(arglist, close_fds=True, creationflags=DETACHED_PROCESS)
 
 	def arg_replacer(self, arglist):
@@ -52,7 +54,7 @@ class GotoFolderCommand(sublime_plugin.TextCommand):
 		newargs = []
 		for arg in arglist:
 			if arg.startswith(r'@'):
-				if len(arg) == 2 and escapes.has_key(arg[1]):
+				if len(arg) == 2 and arg[1] in escapes:
 					escaped = escapes[arg[1]]
 					newargs.append(escaped)
 			else:
