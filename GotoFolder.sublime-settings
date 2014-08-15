@@ -1,5 +1,5 @@
 {
-	"launchers" :{
+	"commands" :{
 	/* Special Arguments:  
 			@d = Current view file's directory
 			@f = Current view's filename

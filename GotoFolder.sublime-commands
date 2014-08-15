@@ -1,6 +1,6 @@
 [
-    { "caption": "Goto Folder: Explorer", "command": "goto_folder" },
-    //{ "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"mode":"conemu"} },
-    { "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"mode":"conemu64"} }
-    //{ "caption": "Goto Folder: Cmd", "command": "goto_folder", "args": {"mode":"cmd"} }
+    { "caption": "Goto Folder: Explorer", "command": "goto_folder", "args": {"c": "explorer"} },
+    //{ "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"c": "conemu"} },
+    { "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"c": "conemu64"} }
+    //{ "caption": "Goto Folder: Cmd", "command": "goto_folder", "args": {"c": "cmd"} }
 ]
