@@ -2,16 +2,11 @@ from __future__ import print_function
 import sublime, sublime_plugin
 import subprocess, os, re
 
-
-goto_folder_settings = sublime.load_settings("GotoFolder.sublime-settings")
-
-
-
 class GotoFolderCommand(sublime_plugin.TextCommand):
 	def run(self, edit, c=None):
 		commandkey = c
 		if self.is_enabled():
-			self.settings = sublime.load_settings("GotoFolder.sublime-settings")
+			self.settings = sublime.load_settings("GotoFolder")
 			commands = self.settings.get("commands")
 			if not commands:
 				print ("'GotoFolder.sublime-settings' missing key 'commands', no commands to run.")
@@ -23,7 +18,7 @@ class GotoFolderCommand(sublime_plugin.TextCommand):
 				print ("Unregonised command: please set in 'GotoFolder.sublime-settings'")
 
 	def is_enabled(self):
-		return self.view.file_name() and len(self.view.file_name()) > 0
+		return bool( self.view.file_name() and len(self.view.file_name()) > 0)
 
 	def launch_process(self, arglist):
 		''' launch detached process '''
