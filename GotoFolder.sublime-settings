@@ -19,9 +19,8 @@
 	"launchers" :{
 		/* Windows launchers */
 		"explorer" : ["explorer", "@D"],
-		"cmd" : ["cmd", "/K", "cd \"@D\"" ],
-		"cmder" : ["D:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe", "-here", "-run", "{cmd::Cmder as Admin}", "-cur_console:nad:\"@D\"" ],
-		"conemu" : ["conemu", "/Dir", "@D", "/Single" ],
-		/* "bash" : ["/usr/bin/bash", "--login", "-c", "\"@D\"" ], */
+		"cmd" : ["cmd", "/K", "cd @D" ],
+		"conemu" : ["ConEmu64", "/Dir", "@D", "/Single", "-run", "{cmd}", "-cur_console:nad:@D" ],
+		"bash" : ["bash", "--login", "-c", "@D" ],
 	}
 }
