@@ -1,16 +1,27 @@
+/*
+ Default Settings
+ Copy required portion to <stsettings>/Packages/User/GotoFolder.sublime-settings
+*/
+/* Special Arguments:  
+		@D = Current view file's directory
+		@F = Current view's filename
+		@L = Current view's line number
+		@@ = raw "@" character
+	Note :
+		DO NOT use an unlisted escape, it will be deleted.
+		e.g. "@x" becomes ""
+		
+		CASE SENSITIVE
+		"@D" is not equal to "@d"
+		e.g. "@d" becomes ""
+*/
 {
-	"commands" :{
-	/* Special Arguments:  
-			@d = Current view file's directory
-			@f = Current view's filename
-			---@l = Current view's line number-- not implemented
-		Escape :
-			"@" as "@@"  
-			e.g. if you need an argument that you enter below to contain "@", write "@@"
-	*/
-		"explorer" : ["explorer", "@d"],
-		"conemu64" : ["conemu64", "/Dir", "@d", "/Single" ],
-		"conemu" : ["conemu", "/Dir", "@d", "/Single" ],
-		"cmd" : ["cmd", "/d", "@d" ]
+	"launchers" :{
+		/* Windows launchers */
+		"explorer" : ["explorer", "@D"],
+		"cmd" : ["cmd", "/K", "cd \"@D\"" ],
+		"cmder" : ["D:\\cmder\\vendor\\conemu-maximus5\\ConEmu64.exe", "-here", "-run", "{cmd::Cmder as Admin}", "-cur_console:nad:\"@D\"" ],
+		"conemu" : ["conemu", "/Dir", "@D", "/Single" ],
+		/* "bash" : ["/usr/bin/bash", "--login", "-c", "\"@D\"" ], */
 	}
 }

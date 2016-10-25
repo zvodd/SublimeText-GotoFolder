@@ -1,0 +1,44 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "GotoFolder",
+                        "children":
+                        [
+                            {
+                                "command": "edit_settings", "args":
+                                {
+                                    "base_file": "${packages}/GotoFolder/GotoFolder.sublime-settings",
+                                    "user_file": "${packages}/User/GotoFolder.sublime-settings",
+                                    "default": "\/* Copy settings from sample on left *\/\n"
+
+                                },
+                                "caption": "Edit Settings"
+                            },
+                            {
+                                "command": "edit_settings", "args":
+                                {
+                                    "base_file": "${packages}/GotoFolder/GotoFolder.sublime-commands",
+                                    "user_file": "${packages}/User/GotoFolder.sublime-commands",
+                                    "default": "\/* Copy settings from sample on left *\/\n"
+                                },
+                                "caption": "Edit Commands"
+                            },
+                            { "caption": "-" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

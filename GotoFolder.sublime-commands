@@ -1,6 +1,14 @@
+/*
+ Ensure command syntax matchs 
+ { "caption": "_TITLE_OF_YOUR_CHOOSING_", "command": "goto_folder", "args": {"c": "_COMMAND_NAME_CREATED_IN_SETTINGS"}}
+ 
+ Copy and uncomment required commands to right.
+ Commands themselves are editable in settings.
+*/
 [
     { "caption": "Goto Folder: Explorer", "command": "goto_folder", "args": {"c": "explorer"} },
-    //{ "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"c": "conemu"} },
-    { "caption": "Goto Folder: ConEmu", "command": "goto_folder", "args": {"c": "conemu64"} }
-    //{ "caption": "Goto Folder: Cmd", "command": "goto_folder", "args": {"c": "cmd"} }
+    { "caption": "Goto Folder: Terminal", "command": "goto_folder", "args": {"c": "cmd"} },
+    /*{ "caption": "Goto Folder: Terminal", "command": "goto_folder", "args": {"c": "cmder"} }, */
+	/* { "caption": "Goto Folder: Terminal", "command": "goto_folder", "args": {"c": "conemu"} }, */
+	/* { "caption": "Goto Folder: Terminal", "command": "goto_folder", "args": {"c": "bash"} }, */
 ]
